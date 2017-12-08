@@ -7107,14 +7107,6 @@ a.text-dark:hover {
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
 
-@font-face {
-  font-family: 'FontAwesome';
-  src: url("http://bootstraplovers.com/assan3.5/bower_components/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0");
-  src: url("http://bootstraplovers.com/assan3.5/bower_components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format('embedded-opentype'),url("http://bootstraplovers.com/assan3.5/bower_components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0") format('woff2'),url("http://bootstraplovers.com/assan3.5/bower_components/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0") format('woff'),url("http://bootstraplovers.com/assan3.5/bower_components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0") format('truetype'),url("http://bootstraplovers.com/assan3.5/bower_components/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
 .fa {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
@@ -13661,20 +13653,6 @@ a.text-dark:hover {
 }
 
 .pushy-submenu > a::after,
-.pushy-submenu > button::after {
-  content: '';
-  display: block;
-  height: 11px;
-  width: 8px;
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  background: url("http://bootstraplovers.com/assan3.5/bower_components/pushy/img/arrow.svg") no-repeat;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  transition: transform 0.2s;
-}
 
 /* Submenu Movement */
 
@@ -14424,16 +14402,6 @@ img.mfp-img {
 .owl-theme .owl-dots .owl-dot.active span,
 .owl-theme .owl-dots .owl-dot:hover span {
   background: #869791;
-}
-@font-face {
-  font-family: 'et-line';
-  src: url("http://bootstraplovers.com/assan3.5/et-line-font/fonts/et-line.eot");
-  src: url("http://bootstraplovers.com/assan3.5/et-line-font/fonts/et-line.eot?#iefix") format('embedded-opentype'),
-		url("http://bootstraplovers.com/assan3.5/et-line-font/fonts/et-line.woff") format('woff'),
-		url("http://bootstraplovers.com/assan3.5/et-line-font/fonts/et-line.ttf") format('truetype'),
-		url("http://bootstraplovers.com/assan3.5/et-line-font/fonts/et-line.svg#et-line") format('svg');
-  font-weight: normal;
-  font-style: normal;
 }
 
 /* Use the following CSS code if you want to use data attributes for inserting your icons */
