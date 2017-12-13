@@ -9,7 +9,7 @@
     ],
     "directories": [
         {
-            "source": "$workspace/dist",
+            "source": "$workspace/src",
             "destination": "/opt/worldofrations.com"
         }
     ],
