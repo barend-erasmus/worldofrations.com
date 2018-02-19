@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/barend-erasmus/worldofrations.com/issues"
   },
-  "homepage": "https://github.com/barend-erasmus/worldofrations.com#readme"
+  "homepage": "https://github.com/barend-erasmus/worldofrations.com#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-inject-partials": "^1.0.3",
+    "gulp-template": "^5.0.0",
+    "run-sequence": "^2.2.1"
+  }
 }

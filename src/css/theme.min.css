@@ -16287,9 +16287,6 @@ body{
     font-size:13px;
     color:#888
 }
-.pricing-comparison-section{
-    overflow-x:scroll
-}
 .pricing-comparison-section .divider{
     height:1px;
     width:100%;
