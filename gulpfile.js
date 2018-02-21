@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const clean = require('gulp-clean');
 const runSequence = require('run-sequence');
 const injectPartials = require('gulp-inject-partials');
+const htmlmin = require('gulp-htmlmin');
 
 
 gulp.task('clean', function () {
@@ -21,15 +22,14 @@ gulp.task('copy-images', function () {
     return gulp.src('./src/images/**/*').pipe(gulp.dest('./dist/images'));
 });
 
-gulp.task('copy-js', function () {
-    return gulp.src('./src/js/**/*').pipe(gulp.dest('./dist/js'));
-});
-
 gulp.task('inject', function () {
-    return gulp.src('./src/**/*.html')
+    return gulp.src([
+        'src/*.html',
+    ])
         .pipe(injectPartials({
             prefix: '',
         }))
+        .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest('./dist'));
 });
 
@@ -40,7 +40,6 @@ gulp.task('build', function () {
         'copy-css',
         'copy-fonts',
         'copy-images',
-        'copy-js',
         'inject',
     );
 });

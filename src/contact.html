@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <!-- partial:partials/head.html -->
 <!-- partial -->
 
@@ -32,14 +32,14 @@
                         You can contact us with anything related to World of Rations.
                         <br/> We'll get in touch with you as soon as possible.
                     </p>
-                    <form role="form" id="contact-form" method="post">
+                    <form role="form" id="contact-form">
                         <div class="form-group">
                             <label for="name">Your name</label>
                             <input type="text" name="name" class="form-control" id="name" />
                         </div>
                         <div class="form-group">
-                            <label for="email">Email address</label>
-                            <input type="email" name="email" class="form-control" id="email" />
+                            <label for="emailAddress">Email address</label>
+                            <input type="email" name="emailAddress" class="form-control" id="email" />
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone</label>
@@ -82,10 +82,30 @@
         </div>
     </div>
 
+    <div class="modal fade" id="contactFormSentModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Successfully sent</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    We'll get in touch with you as soon as possible.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="footer">
         <!-- partial:partials/footer.html -->
         <!-- partial -->
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
     <script type="text/javascript">
         $(function () {
@@ -171,10 +191,47 @@
                 icon: 'images/map-icon.png'
             });
 
+            $("#contact-form").submit(onSubmitContactForm);
+
         });
+
+        function onSubmitContactForm(e) {
+            e.preventDefault();
+
+            $.ajax({
+                type: "POST",
+                url: "https://api.suite.worldofrations.com/api/mail/send",
+                data: {
+                    body: `Dear World of Rations, 
+                    <br /> <br /> 
+                    ${$("#contact-form input[name=name]").val()} has sent you the following message. 
+                    <br /> <br />
+                    ${$("#contact-form textarea[name=message]").val()}
+                    <br /> <br />
+                    Name: ${$("#contact-form input[name=name]").val()}
+                    <br /> <br />
+                    Email Address: ${$("#contact-form input[name=emailAddress]").val()}
+                    <br /> <br />
+                    Phone: ${$("#contact-form input[name=phone]").val()}
+                    `,
+                    from: "worldofrations@gmail.com",
+                    subject: `${$("#contact-form input[name=name]").val()} has sent a message`,
+                    to: "developersworkspace@gmail.com",
+                },
+                success: function (text) {
+                    $('#contactFormSentModal').modal('show');
+
+                    $("#contact-form input[name=name]").val('');
+                    $("#contact-form input[name=phone]").val('');
+                    $("#contact-form input[name=emailAddress]").val('');
+                    $("#contact-form textarea[name=message]").val('');
+                },
+                err: function (err) {
+                    
+                },
+            });
+        }
     </script>
 </body>
-
-<!-- Mirrored from themereact.herokuapp.com/3.0/contactus.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 18 Feb 2018 16:31:10 GMT -->
 
 </html>
