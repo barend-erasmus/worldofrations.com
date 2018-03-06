@@ -21,7 +21,9 @@
     "gulp-clean": "^0.4.0",
     "gulp-htmlmin": "^4.0.0",
     "gulp-inject-partials": "^1.0.3",
-    "gulp-template": "^5.0.0",
-    "run-sequence": "^2.2.1"
+    "handlebars": "^4.0.11",
+    "moment": "^2.20.1",
+    "run-sequence": "^2.2.1",
+    "through2": "^2.0.3"
   }
 }
