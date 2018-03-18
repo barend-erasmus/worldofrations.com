@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "deploy": "gulp build & ssh-deployer -f deploy.json --host worldofrations.com --username username --password password --workspace ./"
+    "build": "gulp build & tsc",
+    "deploy": "gulp build & ssh-deployer -f deploy.json --host worldofrations.com --username username --password password --workspace ./",
+    "lint": "tslint ./src/**/*.ts --fix --exclude ./src/**/*.d.ts"
   },
   "repository": {
     "type": "git",
